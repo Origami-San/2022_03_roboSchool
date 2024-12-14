@@ -8,7 +8,7 @@ import gulpSass from "gulp-sass"; // Компиляция SASS и SCSS файл�
 import sassGlob from "gulp-sass-glob"; // Импорт пакетов сразу несколько файлов записью './blocks/*.scss'
 
 import autoprefixer from "gulp-autoprefixer"; // Автоматическое добавление префиксов в CSS
-import groupMedia from "gulp-group-css-media-queries"; // Группировка одинаковых CSS медиа запросов
+// import groupMedia from "gulp-group-css-media-queries"; // Группировка одинаковых CSS медиа запросов
 // import html & scss
 import replace from "gulp-replace"; // Замена путей подключения изображений в итоговых файлах
 // import js
@@ -165,7 +165,7 @@ export const sassDocs = () => {
       .pipe(sassGlob()) // Импорт блоков из папки './blocks/*.scss'
       .pipe(sass()) // Преобразование *.scss в *.css
       .pipe(autoprefixer(autoprefixerOptions)) // Автоматическое добавление префиксов в CSS !Подключать после SASS обработка CSS
-      .pipe(groupMedia()) // Группируем медиазопросы
+      // .pipe(groupMedia()) // Группируем медиазопросы
       .pipe(replace(/(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi, "$1$2$3$4$6$1")) // Автоисправление относительных путей к файлам на абсолютные в итоговой сборке
       //.pipe(sourceMaps.write(".")) // Запись sourcemaps в фаил стилей
       .pipe(app.gulp.dest(app.paths.styles.docs))
