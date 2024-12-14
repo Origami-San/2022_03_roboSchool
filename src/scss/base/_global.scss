@@ -1,0 +1,146 @@
+/* =====Reset style===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none; // Удаление стандартной стилизации подчеркивания ссылок - влияет на UX-доступность
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* =====General selectors style===== */
+
+body {
+  font-family: var(--font-main); // General font-family
+  font-weight: var(--font-default-weight); // General font-weight
+  font-size: var(--font-default-size); // General font-size
+  color: var(--text-default-color); // General font-color
+  background-color: var(--page-bg-main); // General background-color
+  text-wrap: balance; // Балансируем «выравниваем» текст в многострочных блоках
+}
+
+html,
+body {
+  display: flex; // Делаем header, main, footer, flex-элементами
+  flex-direction: column; // Структура flexbox - колонки
+  // width: 100%; // Элементы занимают все свободное место по ширине. !!!Избыточо, так html, body по умолчанию занимают 100% ширины
+  min-height: 100vh; // Высота на всю высоту экрана
+}
+
+img {
+  display: block; // Делаем элемент блочным
+  height: auto; // Поддерживает пропорции изображения, автоматически подстраивая высоту.
+  max-width: 100%; // Ограничивает изображение шириной родительского контейнера, предотвращая выход за его пределы
+  object-fit: cover; // Обрезает изображение сохраняя соотношение сторон
+}
+
+/* =====General class style===== */
+
+.body {
+}
+
+.page {
+  -webkit-text-size-adjust: 100%; /* Управляет масштабированием текста в браузерах на основе движка WebKit */
+  background-color: rgb(231, 228, 228); /* Общий фон */
+  scroll-behavior: smooth; /*  Плавная прокрутка */
+}
+
+/* Запрет вертикальной прокрутки (скролла) при открытом burger-меню */
+.dis-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.main {
+  flex-grow: 1; /* Элементы растягивается на всё доступное пространство в контейнере с flex-расположением см. html,body */
+}
+
+.footer {
+  margin-top: auto; /* Отодвигаем footer к нижнему краю flex-контейнера, независимо от того, сколько пространства занимает .main. */
+}
+
+/* =====Hidden===== */
+
+// Делает элемент невидимым, он занимаем место на странице {Для всплывающих сообщений}
+.hidden {
+  font-size: 0; /* Убирает размер текстовый контента до минимума */
+  opacity: 0; /* Делает элемент полностью прозрачным */
+  visibility: hidden; /* Делает элемент невидимым, но сохраняет его место в DOM */
+}
+
+// Скрываем элемент, но оставляем видимым для поисковых роботов {Элемент доступности для пользоватлей с ограниченными возможностями}
+.visually-hidden {
+  position: absolute; /* Убирает элемент из потока документа */
+  overflow: hidden; /* Обрезает содержимое элемента */
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px; /* Минимизируют размер элемента */
+  height: 1px; /* Минимизируют размер элемента */
+  clip: rect(0 0 0 0); /* Обрезает содержимое элемента */
+}
+
+// Скрываем элемент полностью
+.none {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+// Отладочный код для поиска элементов вызывающих scroll
+// * {
+//   outline: 4px solid #008000 !important; /* stylelint-disable-line declaration-no-important */
+// }
+
+/* =====Not in use (old)===== */
+
+// .body {
+//   overflow-x: hidden; /* Убирает горизонтальную прокрутку всего документа (ось X). !Убираем при использовании position: sticky! */
+
+//   // Запрет вертикальной прокрутки (скролла) при открытом burger-меню
+//   &--fixet {
+//     overflow-y: hidden; /* Отключаем вертикальную прокрутку страницы для фиксации контента */
+
+//     .header {
+//       background-color: transparent; /* Прозрачный фон .header */
+//     }
+//   }
+// }

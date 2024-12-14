@@ -1,0 +1,50 @@
+.burger {
+  --burger-width: 44px;
+  --burger-height: 44px;
+  --burger-line-width: 26px;
+  --burger-line-height: 2px;
+
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  cursor: pointer;
+
+  &__line {
+    position: absolute;
+    left: 50%; // Смещаем для центрирования и задаем transform
+    top: 50%; // Смещаем для центрирования и задаем transform
+    border-radius: 100px;
+    width: var(--burger-line-width);
+    height: var(--burger-line-height);
+    background-color: var(--page-bg-burger);
+    transform: translateX(-50%) translateY(-50%); // Смещаем для центрирования
+
+    &:first-child {
+      margin-top: -7px;
+    }
+
+    &:last-child {
+      left: 9px;
+      margin-top: 7px;
+      width: 13px;
+      transform: translateY(-50%); // Смещаем для центрирования
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: var(--container-padding);
+    top: var(--padding-header);
+    display: none;
+    background-image: url("../../../img/icons/close-icon.svg");
+    background-position: center;
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      display: block;
+    }
+  }
+}

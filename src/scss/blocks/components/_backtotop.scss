@@ -1,0 +1,57 @@
+.back-to-top {
+  position: fixed; // Фиксируем иконку
+  right: 15px; // Отступ справа
+  bottom: 15px; // Отступ слева
+  z-index: 996; // Всегда сверху
+
+  // Все элементы внутри блока по центру
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Границы
+  border: 1px solid var(--copyright-color);
+  border-radius: 4px;
+
+  // Размеры
+  width: 40px;
+  height: 40px;
+
+  // Фон
+  background: var(--accent-color);
+
+  // Изначально скрыт
+  opacity: 0;
+  visibility: hidden;
+
+  // Плавность
+  transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+
+  // Стили для иконосных шрифтов
+  // & i {
+  //   font-size: 28px;
+  //   color: #fff;
+  //   line-height: 0;
+  // }
+
+  // Показываем при наведении
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Меняем цвет при наведении
+  &:hover {
+    background: var(--text-transparent-color);
+  }
+}
+
+// svg иконка
+.icon--back-to-top {
+  fill: #fff;
+  transition: fill 0.4s ease-in;
+
+  &:hover {
+    fill: var(--copyright-color);
+  }
+}

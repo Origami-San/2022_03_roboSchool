@@ -1,0 +1,49 @@
+.tooltip {
+  margin-left: 10px;
+
+  &__btn {
+    @include flex-all-center;
+
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(20, 16, 36, 0.08);
+
+    // Показываем элемент при наведении
+    &:focus {
+      + .tooltip__txt {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    // Показываем элемент при наведении исключая моюильные устройства
+    @include hover {
+      + .tooltip__txt {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__icon {
+    width: 4px;
+    height: 14px;
+    fill: #141024;
+  }
+
+  &__txt {
+    border-radius: 5px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px 0 rgba(20, 16, 36, 0.1);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-default-color);
+    background: var(--page-bg-main);
+
+    // Элемент изначально скрыт
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+}

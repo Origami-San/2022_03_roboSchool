@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    @@include('blocks/fontsAutoPreload.html')
+    <link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
+    <!-- Add Styles -->
+    <link rel="stylesheet" href="./css/vendor.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body class="body" data-theme="light">
+    @@include('blocks/header.html')
+    <!-- Main -->
+    <main class="main">
+      @@include('blocks/home/hero.html') @@include('blocks/home/about.html') @@include('blocks/home/benefits.html')
+      @@include('blocks/home/trainers.html') @@include('blocks/home/tariffs.html') @@include('blocks/home/order.html')
+    </main>
+    <!-- End Main -->
+    @@include('blocks/footer.html') @@include('blocks/modal.html')
+    <!-- Add Script -->
+    <script src="./js/forms.bundle.js"></script>
+    <script src="./js/index.bundle.js"></script>
+  </body>
+</html>

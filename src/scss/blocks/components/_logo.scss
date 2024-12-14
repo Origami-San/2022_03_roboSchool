@@ -1,0 +1,9 @@
+.logo {
+  display: block;
+
+  &__img {
+    @include small-mobile {
+      max-width: 136px;
+    }
+  }
+}

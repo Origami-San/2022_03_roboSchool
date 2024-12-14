@@ -1,0 +1,82 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: var(--padding-header) 0;
+  width: 100%;
+  transition: box-shadow 0.5s, background-color 0.5s;
+
+  &--fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+  }
+
+  .scrolled & {
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+    background-color: rgba(82, 78, 68, 0.8);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .scrolled &,
+  .disable-scroll & {
+    transition: box-shadow 0.5s, background-color 0.5s, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+
+  .glightbox-open .scrolled &,
+  .disable-scroll & {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__logo {
+    @include tablet {
+      margin-right: auto;
+    }
+  }
+
+  &__row {
+    @include flex-align-center-between;
+
+    gap: 15px; // Отступ безопасности между блоками
+
+    @include tablet {
+      justify-content: initial; // Сбрасываем предыдущее значение
+    }
+  }
+
+  &__nav {
+  }
+
+  &__phone {
+    @include tablet {
+      --burger-width: 44px;
+      --burger-height: 44px;
+
+      font-size: 0; // Уменьшаем текстовый блок
+
+      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      width: var(--burger-width);
+      height: var(--burger-height);
+      cursor: pointer;
+
+      background-image: url("../../../img/icons/phone-icon.svg");
+      background-position: center;
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,293 @@
+.popup {
+  --simplebar-padding: 20px;
+  --simplebar-width: 5px;
+
+  padding: 40px;
+  width: 100%;
+  min-height: 768px;
+  max-width: 940px;
+
+  @include mobile {
+    padding: 35px 20px;
+    min-height: auto;
+  }
+
+  &__top {
+    display: flex;
+    margin-bottom: 40px;
+    gap: 40px;
+
+    @include mobile {
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+  }
+
+  &__image {
+  }
+
+  &__img {
+    overflow: hidden;
+    border-radius: 20px;
+
+    @include mobile {
+      border-radius: 10px;
+    }
+  }
+
+  &__details {
+    line-height: 1.6;
+
+    @include mobile {
+      width: 340px;
+    }
+  }
+
+  &__details-name {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--text-default-color);
+
+    @include mobile {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+  }
+
+  &__details-profession {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-transparent-color);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__social {
+  }
+
+  &__bottom {
+  }
+
+  &__content {
+    position: relative;
+    padding-top: var(--simplebar-padding);
+    padding-right: var(--simplebar-width);
+    padding-bottom: 30px;
+    max-height: 370px;
+    line-height: 1.6;
+
+    &-shadow {
+      position: absolute;
+      left: 40px;
+      right: calc(40px + var(--simplebar-width));
+      bottom: 40px;
+      height: 40px;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0.3) 100%);
+
+      @include mobile {
+        left: 20px;
+        bottom: 6px;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 20px;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      font-weight: 600;
+      font-size: 24px;
+
+      @include mobile {
+        margin: 20px 0 10px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__tabs {
+    .tabs {
+      &__dropdown {
+        position: relative; // Для позиционирования tabs__nav
+
+        &-arrow {
+          content: "";
+          position: relative;
+          top: 1px; // Выравниваем стреку по уентру
+          display: inline-block;
+          border-style: solid;
+          border-width: 7px 5px 0;
+          border-color: #fff transparent transparent;
+          border-radius: 2px;
+          pointer-events: none; // Снимаем клик со стрелки
+        }
+
+        &-btn {
+          position: relative; // Для позиционирования стрелки
+          display: none;
+          gap: 8px; // Отступ между кнопкой и стрелкой
+
+          @include mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            // Bnt size setting
+            padding: 10px 5px;
+            width: 100%;
+
+            // Bnt font setting
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-light-color);
+            background-color: var(--accent-color);
+          }
+        }
+
+        &--open .tabs__nav {
+          @include mobile {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      &__nav {
+        border-bottom: 1px solid rgba(20, 16, 36, 0.11);
+        padding-bottom: 20px;
+        gap: 180px;
+
+        @include small-tablet {
+          gap: 100px;
+        }
+
+        @include mobile {
+          position: absolute;
+          left: 0;
+          top: 52px;
+          z-index: 2;
+          display: block;
+          overflow: hidden;
+          padding-bottom: 0;
+          width: 100%;
+          box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+          background: #fff;
+          opacity: 0;
+          visibility: hidden;
+          max-height: 0;
+          transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease-in-out;
+
+          // Добавляем свойство для верного расчета высоты контента с отступами
+          box-sizing: content-box;
+          border-bottom: none;
+        }
+
+        &-item {
+          &:last-child {
+            @include mobile {
+              border-bottom: 1px solid #79849b;
+            }
+          }
+        }
+
+        &-btn {
+          padding: 0;
+          color: var(--inactive-tab-color);
+          transition: color var(--transition);
+
+          @include mobile {
+            border: 1px solid #79849b;
+            border-bottom: 0;
+            padding: 13px 20px;
+            width: 100%;
+          }
+
+          &--active {
+            color: var(--accent-color);
+            background-color: transparent;
+          }
+
+          &:hover {
+            color: var(--text-default-color);
+            background-color: transparent;
+          }
+
+          &:focus {
+            color: var(--accent-color);
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Отступ слева/справа на мобильных
+.graph-modal {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+// Кнопка закрытия
+.graph-modal__close {
+  // Отступов
+  right: 40px;
+  top: 40px;
+
+  // Настройки размера элемента
+  width: auto;
+  height: auto;
+
+  // Настройки шрифта
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-transparent-color);
+
+  // Изображение кнопки закрыть
+  background-image: none;
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  @include mobile {
+    // Настройки размера элемента
+    right: 10px;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    font-size: 0;
+    background-image: url("../../../img/icons/close-dark-icon.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.simplebar-track.simplebar-vertical {
+  top: var(--simplebar-padding); // или margin-top
+  border-radius: 40px;
+  width: var(--simplebar-width);
+  background: rgba(20, 16, 36, 0.08);
+}
+
+.simplebar-scrollbar::before {
+  left: 0;
+  right: 0;
+  border-radius: 40px;
+  width: var(--simplebar-width);
+  background-color: var(--text-default-color);
+  opacity: 1;
+}

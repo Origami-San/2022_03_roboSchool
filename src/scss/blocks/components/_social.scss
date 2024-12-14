@@ -1,0 +1,26 @@
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  // &__item {
+  // }
+
+  &__link {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: var(--text-default-color);
+    object-fit: cover;
+    transition: fill var(--transition);
+
+    &:hover {
+      fill: var(--text-transparent-color);
+    }
+  }
+}

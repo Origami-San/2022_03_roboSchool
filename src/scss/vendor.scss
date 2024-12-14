@@ -1,0 +1,23 @@
+// normalize css
+@import "../../node_modules/normalize.css/normalize"; // https://necolas.github.io/normalize.css/
+
+// Modal css
+@import "./vendors/graph-modal";
+
+// Accordion css
+@import "./vendors/accordion";
+
+// Swiper css
+@import "../../node_modules/swiper/swiper-bundle.min";
+
+// Tabs css
+@import "../../node_modules/graph-tabs/dist/graph-tabs.min";
+
+// Simplebar css
+@import "../../node_modules/simplebar/dist/simplebar.min";
+
+// AOS css
+@import "../../node_modules/aos/dist/aos";
+
+// Glightbox CSS
+@import "../../node_modules/glightbox/dist/css/glightbox.min";

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<link
+			rel="preload"
+			href="./fonts/Jost-Bold.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="./fonts/Jost-Regular.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="./fonts/Jost-SemiBold.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+
+		<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
+		<!-- Add Styles -->
+		<link rel="stylesheet" href="./css/vendor.css" />
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+
+	<body class="body" data-theme="light">
+		<!-- Header -->
+		<header class="header header--fixed">
+			<div class="container container--large">
+				<div class="header__row">
+					<!-- Logo -->
+					<a class="header__logo logo" href="#!">
+						<img
+							class="logo__img"
+							loading="lazy"
+							src="./img/icons/Logo.svg"
+							width="228"
+							height="48"
+							alt="Logo"
+						/>
+					</a>
+					<!-- End Logo -->
+					<!-- Nav -->
+					<nav class="header__nav nav" title="Главное меню" data-menu>
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a class="nav__link" href="#about" data-menu-item>О&#160;школе</a>
+							</li>
+							<li class="nav__item">
+								<a class="nav__link" href="#trainers" data-menu-item>Тренеры</a>
+							</li>
+							<li class="nav__item">
+								<a class="nav__link" href="#tariffs" data-menu-item>Стоимость</a>
+							</li>
+						</ul>
+						<!-- Close Burger btn -->
+						<button
+							class="burger burger__close"
+							aria-label="Закрыть меню"
+							data-menu-close
+						></button>
+						<!-- End Close Burger btn -->
+					</nav>
+					<!-- End Nav -->
+					<!-- Link Tel -->
+					<no-typography
+						><a class="header__phone phone" href="tel:+78000001122"
+							>+7 800 000 11 22</a
+						></no-typography
+					>
+					<!-- End Link Tel -->
+					<!-- Burger btn -->
+					<button
+						class="header__burger burger"
+						aria-label="Открыть меню"
+						aria-expanded="false"
+						data-burger
+					>
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+					</button>
+					<!--End Burger btn -->
+				</div>
+			</div>
+		</header>
+		<!-- End Header -->
+
+		<!-- Main -->
+		<main class="main">
+			<section class="hero">
+				<div class="container">
+					<div class="hero__content">
+						<div class="hero__content-left">
+							<h1 class="hero__title heading-h1">Robo School</h1>
+							<p class="hero__text text-p-medium">
+								Курсы повышения квалификации по&#160;робототехнике для педагогов
+								начальной школы
+							</p>
+							<a class="hero__btn btn" href="#tariffs">Записаться на&#160;курс</a>
+						</div>
+						<div class="hero__content-right">
+							<picture>
+								<source
+									srcset="
+										./img/images/hero-img.webp    1x,
+										./img/images/hero-img@2x.webp 2x
+									"
+									type="image/webp"
+								/>
+								<img
+									loading="lazy"
+									class="hero__img"
+									src="./img/images/hero-img.png"
+									srcset="./img/images/hero-img@2x.png"
+									width="783"
+									height="917"
+									alt="The girl with the notebooks in her hands"
+								/>
+							</picture>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="about" id="about">
+				<div class="container">
+					<h2 class="visually-hidden">О&#160;школе RoboSchool</h2>
+					<p class="about__descr text-p-large">
+						<span class="about__descr-highlight">Robo School</span>&#160;&#8212;
+						учреждение для формирования кадрового <br />
+						педагогического резерва в&#160;сфере робототехники и&#160;программирования
+					</p>
+					<ul class="about__list">
+						<li class="about__item">
+							<div class="about__item-title">10</div>
+							<p class="about__item-text text-p-default">
+								УМК по&#160;различным направлениям по&#160;робототехнике
+							</p>
+						</li>
+						<li class="about__item">
+							<div class="about__item-title">20</div>
+							<p class="about__item-text text-p-default">
+								Школ, в&#160;которых запущена робототехника
+							</p>
+						</li>
+						<li class="about__item">
+							<div class="about__item-title">100</div>
+							<p class="about__item-text text-p-default">
+								Педагогов прошедших курсы повышения квалификации
+							</p>
+						</li>
+						<li class="about__item">
+							<div class="about__item-title">10 000</div>
+							<p class="about__item-text text-p-default">
+								Обученных детей на&#160;базе собственных центров
+							</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="benefits">
+				<div class="container">
+					<h2 class="benefits__title heading-h2">Что вы&#160;получите после курса</h2>
+					<ul class="benefits__list">
+						<li class="benefits__item" data-aos="fade-up" data-aos-delay="100">
+							<h4 class="benefits__item-title heading-h4">Удостоверение</h4>
+							<p class="benefits__item-text text-p-default">
+								Дающее право преподавать робототехнику для детей 6-12 лет
+								в&#160;образовательных учреждениях
+							</p>
+						</li>
+						<li class="benefits__item" data-aos="fade-up" data-aos-delay="200">
+							<h4 class="benefits__item-title heading-h4">Удостоверение</h4>
+							<p class="benefits__item-text text-p-default">
+								По&#160;основам разработки учебно-методических комплексов
+								по&#160;робототехнике и&#160;программированию
+							</p>
+						</li>
+						<li
+							class="benefits__item benefits__item--centr"
+							data-aos="fade-up"
+							data-aos-delay="300"
+						>
+							<h4 class="benefits__item-title heading-h4">
+								Практику
+								<span class="tooltip">
+									<button
+										class="tooltip__btn"
+										id="tooltip__btn"
+										aria-describedby="id1"
+									>
+										<svg class="tooltip__icon">
+											<use
+												href="./img/svgsprite/sprite.svg#tooltip-icon"
+											></use>
+										</svg>
+									</button>
+									<span
+										class="tooltip__txt text-p-small"
+										id="tooltip__txt"
+										role="tooltip"
+										id="id1"
+									>
+										<span class="visually-hidden">Тултип: </span>
+										При наличие свободных мест
+									</span>
+								</span>
+							</h4>
+							<p class="benefits__item-text text-p-default">
+								Возможность пройти практику по&#160;преподаванию робототехники
+								на&#160;базе R: ED&#160;LAB (в&#160;оффлайн или онлайн формате)
+							</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="trainers" id="trainers">
+				<div class="container">
+					<h2 class="trainers__title heading-h2">Профессиональные тренеры</h2>
+				</div>
+				<div class="container-right">
+					<!-- Swiper -->
+					<div class="swiper trainers__swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide trainers__slide">
+								<div class="trainers__item">
+									<picture>
+										<source
+											srcset="./img/images/trainers/trainers1-img.webp"
+											type="image/webp"
+										/>
+										<a
+											href="./img/images/trainers/trainers1-img.jpg"
+											class="glightbox"
+											data-glightbox="title"
+										>
+											<img
+												loading="lazy"
+												class="trainers__img"
+												src="./img/images/trainers/trainers1-img.jpg"
+												width="360"
+												height="500"
+												alt="Ирина Лайм"
+											/>
+										</a>
+									</picture>
+									<h4 class="trainers__name heading-h4">Ирина Лайм</h4>
+									<p class="trainers__position text-p-default">
+										преподаватель по&#160;робототехнике
+									</p>
+									<!-- Open Modal Btn -->
+									<button
+										class="trainers__btn text-p-default"
+										data-graph-path="trainers_1"
+									>
+										Подробнее
+									</button>
+									<!-- End Open Modal Btn -->
+								</div>
+							</div>
+							<div class="swiper-slide trainers__slide">
+								<div class="trainers__item">
+									<picture>
+										<source
+											srcset="./img/images/trainers/trainers2-img.webp"
+											type="image/webp"
+										/>
+										<img
+											loading="lazy"
+											class="trainers__img"
+											src="./img/images/trainers/trainers2-img.jpg"
+											width="360"
+											height="500"
+											alt="Ирина Лайм"
+										/>
+									</picture>
+									<h4 class="trainers__name heading-h4">Марина Орлова</h4>
+									<p class="trainers__position text-p-default">
+										преподаватель по&#160;робототехнике
+									</p>
+									<!-- btn -->
+									<button
+										class="trainers__btn text-p-default"
+										data-graph-path="trainers_1"
+									>
+										Подробнее
+									</button>
+									<!-- End btn -->
+								</div>
+							</div>
+							<div class="swiper-slide trainers__slide">
+								<div class="trainers__item">
+									<picture>
+										<source
+											srcset="./img/images/trainers/trainers3-img.webp"
+											type="image/webp"
+										/>
+										<img
+											loading="lazy"
+											class="trainers__img"
+											src="./img/images/trainers/trainers3-img.jpg"
+											width="360"
+											height="500"
+											alt="Ирина Лайм"
+										/>
+									</picture>
+									<h4 class="trainers__name heading-h4">Максим Петров</h4>
+									<p class="trainers__position text-p-default">
+										преподаватель по&#160;программированию
+									</p>
+									<!-- btn -->
+									<button
+										class="trainers__btn text-p-default"
+										data-graph-path="trainers_1"
+									>
+										Подробнее
+									</button>
+									<!-- End btn -->
+								</div>
+							</div>
+							<div class="swiper-slide trainers__slide">
+								<div class="trainers__item">
+									<picture>
+										<source
+											srcset="./img/images/trainers/trainers4-img.webp"
+											type="image/webp"
+										/>
+										<img
+											loading="lazy"
+											class="trainers__img"
+											src="./img/images/trainers/trainers4-img.jpg"
+											width="360"
+											height="500"
+											alt="Ирина Лайм"
+										/>
+									</picture>
+									<h4 class="trainers__name heading-h4">Константин Назаров</h4>
+									<p class="trainers__position text-p-default">
+										преподаватель по&#160;робототехнике
+									</p>
+									<!-- btn -->
+									<button
+										class="trainers__btn text-p-default"
+										data-graph-path="trainers_1"
+									>
+										Подробнее
+									</button>
+									<!-- End btn -->
+								</div>
+							</div>
+							<div class="swiper-slide trainers__slide">
+								<div class="trainers__item">
+									<picture>
+										<source
+											srcset="./img/images/trainers/trainers5-img.webp"
+											type="image/webp"
+										/>
+										<img
+											loading="lazy"
+											class="trainers__img"
+											src="./img/images/trainers/trainers5-img.jpg"
+											width="360"
+											height="500"
+											alt="Ирина Лайм"
+										/>
+									</picture>
+									<h4 class="trainers__name heading-h4">Лиза Весенняя</h4>
+									<p class="trainers__position text-p-default">
+										преподаватель по&#160;программированию
+									</p>
+									<!-- btn -->
+									<button
+										class="trainers__btn text-p-default"
+										data-graph-path="trainers_1"
+									>
+										Подробнее
+									</button>
+									<!-- End btn -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End swiper -->
+				</div>
+				<div class="container">
+					<!-- Navigation buttons -->
+					<div class="trainers__nav">
+						<div class="swiper-scrollbar trainers__scrollbar"></div>
+						<div class="trainers__btns">
+							<button
+								class="trainers__slider-btn trainers__slider-btn--prev"
+								aria-label="Перейти к предыдущиму слайду"
+							>
+								<svg class="icon icon--arrow">
+									<use href="./img/svgsprite/sprite.svg#arrow-icon"></use>
+								</svg>
+							</button>
+							<button
+								class="trainers__slider-btn trainers__slider-btn--next"
+								aria-label="Перейти к следующему слайду"
+							>
+								<svg class="icon icon--arrow">
+									<use href="./img/svgsprite/sprite.svg#arrow-icon"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="tariffs" id="tariffs">
+				<div class="container">
+					<h2 class="tariffs__title heading-h2">Выберите нужный пакет</h2>
+					<ul class="tariffs__list">
+						<li class="tariffs__item tariffs__item--accent">
+							<h3 class="tariffs__subtitle">PRO</h3>
+							<div class="tariffs__price">20.000 ₽</div>
+							<p class="tariffs__descr text-p-default">
+								УМК по&#160;робототетхнике и&#160;программированию
+							</p>
+							<button class="tariffs__btn btn" aria-label="Оставить заявку">
+								Оставить заявку
+							</button>
+						</li>
+						<li class="tariffs__item">
+							<h3 class="tariffs__subtitle">ROBO</h3>
+							<div class="tariffs__price">15.000 ₽</div>
+							<p class="tariffs__descr text-p-default">УМК по&#160;робототетхнике</p>
+							<button class="tariffs__btn btn" aria-label="Оставить заявку">
+								Оставить заявку
+							</button>
+						</li>
+						<li class="tariffs__item">
+							<h3 class="tariffs__subtitle">PROG</h3>
+							<div class="tariffs__price">10.000 ₽</div>
+							<p class="tariffs__descr text-p-default">
+								УМК по&#160;программированию
+							</p>
+							<button class="tariffs__btn btn" aria-label="Оставить заявку">
+								Оставить заявку
+							</button>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="order">
+				<div class="container">
+					<div class="order__inner">
+						<div class="order__left">
+							<h2 class="order__title heading-h3">
+								Запишитесь на&#160;курс со&#160;скидкой 10%
+							</h2>
+							<no-typography
+								><p class="order__descr text-p-medium">
+									Акция действительна&nbsp;до&nbsp;10&nbsp;марта 2022 года
+								</p></no-typography
+							>
+						</div>
+						<div class="order__right">
+							<form action="#" class="order__form form">
+								<label class="form__label">
+									<input
+										class="form__input input-name"
+										type="text"
+										name="username"
+										placeholder="Имя"
+										required
+									/>
+								</label>
+								<label class="form__label">
+									<input
+										class="form__input input-tel"
+										type="tel"
+										name="phone"
+										placeholder="Телефона"
+										required
+									/>
+								</label>
+								<label class="form__label">
+									<input
+										class="form__input input-email"
+										type="email"
+										name="email"
+										placeholder="E-mail"
+										required
+									/>
+								</label>
+								<button class="form__btn btn btn--dark">Отправить заявку</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- End Main -->
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container container--large">
+				<div class="footer__row">
+					<div class="footer__left">
+						<!-- Logo -->
+						<a class="footer__logo logo" href="#!">
+							<img
+								class="logo__img"
+								loading="lazy"
+								src="./img/icons/Logo.svg"
+								width="228"
+								height="48"
+								alt="Logo"
+							/>
+						</a>
+						<!-- End Logo -->
+					</div>
+					<div class="footer__right">
+						<no-typography>
+							<!-- Link Tel -->
+							<a href="tel:+78000000000" class="phone">+7 800 000 00 00</a>
+							<!-- End Link Tel -->
+						</no-typography>
+					</div>
+				</div>
+				<!-- Сopyright -->
+				<p class="footer__copyright text-p-small">&#169; ROBO.SCHOOL</p>
+				<!-- End Сopyright -->
+			</div>
+			<!-- Back To Top -->
+			<a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
+				<svg class="icon icon--back-to-top">
+					<use href="./img/svgsprite/sprite.svg#arrow-up-short"></use>
+				</svg>
+			</a>
+		</footer>
+		<!-- End Footer -->
+		<div class="graph-modal">
+			<div
+				class="graph-modal__container popup"
+				role="dialog"
+				aria-modal="true"
+				data-graph-target="trainers_1"
+			>
+				<button
+					class="js-modal-close graph-modal__close"
+					aria-label="Закрыть модальное окно"
+				>
+					Закрыть
+				</button>
+				<div class="graph-modal__content">
+					<!-- Contetnt -->
+					<div class="popup__top">
+						<div class="popup__image">
+							<picture>
+								<source
+									srcset="./img/images/trainers/trainers1-img.webp"
+									type="image/webp"
+								/>
+								<img
+									loading="lazy"
+									class="popup__img"
+									src="./img/images/trainers/trainers1-img.jpg"
+									width="160"
+									height="222"
+									alt="Марина Орлова"
+								/>
+							</picture>
+						</div>
+						<div class="popup__details">
+							<div class="popup__details-name">Ирина Лайм</div>
+							<div class="popup__details-profession text-p-default">
+								преподаватель по&#160;робототехнике
+							</div>
+							<ul class="popup__social social">
+								<li class="social__item">
+									<a class="social__link" target="_blank" href="#">
+										<svg class="social__icon">
+											<use
+												href="./img/svgsprite/sprite.svg#facebook-icon"
+											></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link" target="_blank" href="#">
+										<svg class="social__icon">
+											<use
+												href="./img/svgsprite/sprite.svg#instagram-icon"
+											></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="popup__bottom">
+						<div class="tabs popup__tabs" data-tabs="popup">
+							<!-- Tabs btn mobile dropdown wrapper-->
+							<div class="tabs__dropdown">
+								<!-- Tabs btn mobile-->
+								<button class="tabs__dropdown-btn">
+									Начальное значение<span class="tabs__dropdown-arrow"></span>
+								</button>
+								<!-- End Tabs btn mobile-->
+								<!-- Tabs btn -->
+								<ul class="tabs__nav">
+									<li class="tabs__nav-item">
+										<button
+											class="tabs__nav-btn tabs__nav-btn--active"
+											type="button"
+										>
+											Образование
+										</button>
+									</li>
+									<li class="tabs__nav-item">
+										<button class="tabs__nav-btn" type="button">
+											Опыт работы
+										</button>
+									</li>
+									<li class="tabs__nav-item">
+										<button class="tabs__nav-btn" type="button">Награды</button>
+									</li>
+								</ul>
+								<!-- End Tabs btn -->
+							</div>
+							<!-- End Tabs btn mobile dropdown wrapper-->
+							<!-- Tabs Contant -->
+							<div class="tabs__content">
+								<div class="tabs__panel tabs__panel--active">
+									<div class="popup__content" data-simplebar>
+										<p>Сентябрь 1995&#160;&#8212; Июнь 2000</p>
+										<p>
+											Санкт-Петербургский политехнический университет Петра
+											Великого
+										</p>
+										<p>Факультет: Компьютерных наук и&#160;технологий</p>
+										<p>Специальность: Математика и&#160;компьютерные науки</p>
+										<p>Форма обучения: Очная</p>
+										<h3>Курсы и&#160;тренинги</h3>
+										<p>Ноябрь 2020&#160;&#8212; Февраль 2021</p>
+										<p>
+											Программа дополнительного образования &#171;3D
+											Моделирование&#187;
+										</p>
+										<p>
+											Место проведения: Институт дополнительного образования
+											&#171;Политех&#187;
+										</p>
+									</div>
+									<div class="popup__content-shadow"></div>
+								</div>
+								<div class="tabs__panel">
+									<div class="popup__content" data-simplebar>
+										<p>Сентябрь 1997&#160;&#8212; Июнь 2000</p>
+										<p>
+											Санкт-Петербургский политехнический университет Петра
+											Великого
+										</p>
+										<p>Факультет: Компьютерных наук и&#160;технологий</p>
+										<p>Специальность: Математика и&#160;компьютерные науки</p>
+										<p>Форма обучения: Очная</p>
+										<h3>Курсы и&#160;тренинги</h3>
+										<p>Ноябрь 2020&#160;&#8212; Февраль 2021</p>
+										<p>
+											Программа дополнительного образования &#171;3D
+											Моделирование&#187;
+										</p>
+										<p>
+											Место проведения: Институт дополнительного образования
+											&#171;Политех&#187;
+										</p>
+									</div>
+									<div class="popup__content-shadow"></div>
+								</div>
+								<div class="tabs__panel">
+									<div class="popup__content" data-simplebar>
+										<p>Сентябрь 1998&#160;&#8212; Июнь 2000</p>
+										<p>
+											Санкт-Петербургский политехнический университет Петра
+											Великого
+										</p>
+										<p>Факультет: Компьютерных наук и&#160;технологий</p>
+										<p>Специальность: Математика и&#160;компьютерные науки</p>
+										<p>Форма обучения: Очная</p>
+										<h3>Курсы и&#160;тренинги</h3>
+										<p>Ноябрь 2020&#160;&#8212; Февраль 2021</p>
+										<p>
+											Программа дополнительного образования &#171;3D
+											Моделирование&#187;
+										</p>
+										<p>
+											Место проведения: Институт дополнительного образования
+											&#171;Политех&#187;
+										</p>
+									</div>
+									<div class="popup__content-shadow"></div>
+								</div>
+							</div>
+							<!-- End Tabs Contant -->
+						</div>
+					</div>
+					<!-- End Contetnt -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Add Script -->
+		<script src="./js/forms.bundle.js"></script>
+		<script src="./js/index.bundle.js"></script>
+	</body>
+</html>

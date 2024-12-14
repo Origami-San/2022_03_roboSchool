@@ -1,0 +1,12 @@
+/* Base */
+@import "./base/global"; // Global style
+@import "./base/fontsAutoGen"; // Fonts Autho Generation
+@import "./base/vars"; // Variables
+@import "./mixins/*.scss"; // Mixins
+@import "./base/text"; // Text
+@import "./base/containers"; // Container sizes
+
+/* Components Blocks */
+@import "./blocks/components/*.scss"; // Компоненты, которые можно переиспольовать (btn, nav, form и т.д.)
+@import "./blocks/*.scss"; // Header & Footer
+@import "./blocks/home/*.scss"; // Секции для конкретной страницы

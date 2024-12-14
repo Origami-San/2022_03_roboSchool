@@ -1,0 +1,132 @@
+.trainers {
+  padding: 120px 0;
+
+  @include small-mobile {
+    padding: 60px 0;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include small-mobile {
+      text-align: center;
+    }
+  }
+
+  // &__swiper {
+  // }
+
+  &__slide {
+    max-width: 360px;
+
+    @include small-mobile {
+      max-width: 220px;
+    }
+  }
+
+  // &__item {
+  // }
+
+  &__img {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    height: 500px; // Фиксированная высота изображения контейнера с изображением
+    max-width: 100%;
+
+    @include small-mobile {
+      height: 306px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--page-bg-hero);
+  }
+
+  &__position {
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-transparent-color);
+  }
+
+  &__btn {
+    padding: 0;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--accent-color);
+  }
+
+  &__nav {
+    @include flex-align-center-between;
+
+    margin-top: 77px;
+  }
+
+  &__btns {
+    @include flex-all-center;
+
+    gap: 10px;
+  }
+
+  &__slider-btn {
+    @include flex-all-center;
+
+    border: solid 1px transparent;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    background-color: var(--text-default-color);
+    transition: background-color var(--transition), border var(--transition);
+
+    &:hover {
+      border: solid 1px var(--text-default-color);
+      background-color: var(--page-bg-main);
+
+      .icon--arrow {
+        fill: var(--accent-color);
+      }
+    }
+
+    // &--prev {
+    // }
+
+    &--next {
+      transform: rotate(180deg);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+// icon
+.icon--arrow {
+  height: 14px;
+  fill: #fff;
+  transition: fill var(--transition);
+}
+
+// Scrollbar
+.swiper-scrollbar.trainers__scrollbar {
+  position: relative;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 40px;
+  width: 360px;
+  height: 5px;
+  background: rgba(20, 16, 36, 0.08);
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.swiper-scrollbar-drag {
+  background-color: var(--text-default-color);
+}

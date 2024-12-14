@@ -1,0 +1,139 @@
+.tariffs {
+  padding-bottom: 120px;
+
+  @include small-mobile {
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--text-default-color);
+
+    @include small-tablet {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+
+    @include mini-desktop {
+      gap: 30px;
+    }
+
+    @include small-tablet {
+      gap: 30px 20px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include small-mobile {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 4 span;
+    border: 1px solid rgba(20, 16, 36, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: var(--text-default-color);
+
+    &--accent {
+      border: none;
+      color: var(--text-light-color);
+      background-color: var(--page-bg-card);
+    }
+
+    @include mini-desktop {
+      padding: 30px;
+    }
+
+    @include small-tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      grid-column: 8 span;
+      grid-column: 2 / 8;
+    }
+
+    @include small-mobile {
+      grid-column: 4 span;
+      padding: 40px 20px;
+    }
+  }
+
+  &__subtitle {
+    @include flex-all-center;
+
+    margin-bottom: 60px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.6;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 4px;
+      background-color: currentColor; /* stylelint-disable-line */
+    }
+
+    &::before {
+      margin-right: 10px;
+    }
+
+    &::after {
+      margin-left: 10px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 1.6;
+
+    @include small-tablet {
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: 50px;
+    }
+  }
+
+  &__descr {
+    margin-bottom: auto;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  &__btn {
+    margin-top: 60px;
+    min-width: 100%;
+
+    @include small-tablet {
+      margin-top: 30px;
+      padding: 17px 20px;
+    }
+  }
+}

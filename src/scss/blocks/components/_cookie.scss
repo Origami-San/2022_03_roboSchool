@@ -1,0 +1,43 @@
+/* Стиль для предупреждения */
+.cookie-warning {
+  position: fixed;
+  left: 10px;
+  bottom: -100px; /* Скрыто за пределами экрана */
+  z-index: 1000;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+
+  /* Когда предупреждение активировано */
+  &.show {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+/* Стиль для кнопки */
+.accept-cookies {
+  margin-left: 10px;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #d52027;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+
+  /* Стиль при фокусировки */
+  &:focus {
+    outline: 3px solid #fc0;
+  }
+
+  /* Стиль при фокусировки */
+  &:hover {
+    opacity: 0.8;
+  }
+}

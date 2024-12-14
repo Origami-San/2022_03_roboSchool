@@ -1,0 +1,39 @@
+.footer {
+  padding: 40px 0;
+  color: var(--text-light-color);
+  background-color: var(--page-bg-footer);
+
+  @include small-mobile {
+    padding: 40px 0 20px;
+  }
+
+  &__row {
+    @include flex-align-center-between;
+    gap: 20px;
+
+    margin-bottom: 5px;
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+  }
+
+  // &__left {
+  // }
+
+  // &__right {
+  // }
+
+  // &__logo {
+  // }
+
+  &__copyright {
+    font-weight: 400;
+    color: var(--copyright-color);
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.hero {
+  overflow: hidden;
+  padding: 160px 0 0;
+  color: var(--text-light-color);
+  background-color: var(--page-bg-hero);
+
+  @include small-tablet {
+    padding: 120px 0 100px;
+  }
+
+  @include small-mobile {
+    padding-bottom: 40px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+
+    &-left {
+      max-width: 516px;
+
+      @include small-tablet {
+        max-width: none;
+      }
+
+      @include mobile {
+        text-align: center;
+      }
+    }
+
+    &-right {
+      @include small-tablet {
+        display: none;
+      }
+
+      @include small-mobile {
+        position: absolute;
+        left: 50%; // Центрируем относительно горизонтальной оси
+        bottom: 0;
+        z-index: 1; // Отправляем изображение на задний план, чтобы оно оказалось за кнопкой
+        display: block;
+        width: 100%; // Растягиваем на всю ширинц
+        max-width: 273px; // Задаем фиксированную ширину
+        transform: translateX(-50%); // Корректируем смещение для полного центрирования
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 140px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+
+    @include small-tablet {
+      margin-top: auto;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    @include small-mobile {
+      margin-bottom: 270px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+
+    @include small-mobile {
+      padding: 17px 54px;
+      width: 100%;
+    }
+  }
+
+  &__img {
+    transform: translateX(100px);
+
+    @include small-mobile {
+      transform: translateX(0);
+    }
+  }
+}

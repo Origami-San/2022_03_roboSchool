@@ -1,0 +1,7 @@
+/node_modules
+/build
+/layout
+/src/media
+package-lock.json
+.webp
+.DS_Store

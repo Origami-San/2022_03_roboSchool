@@ -1,0 +1,25 @@
+.btn {
+  // appearance styles
+  border-radius: 5px;
+  padding: 25px 54px;
+  min-width: 260px;
+  color: var(--text-light-color);
+  background-color: var(--accent-color);
+
+  // text styles
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+
+  // hover styles
+  transition: opacity var(--transition);
+
+  &:hover {
+    opacity: var(--opacity);
+  }
+
+  &--dark {
+    background-color: var(--page-bg-btn-form);
+  }
+}

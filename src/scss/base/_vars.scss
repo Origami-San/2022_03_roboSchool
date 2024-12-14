@@ -1,0 +1,39 @@
+:root {
+  // fonts
+  --font-main: "Jost", sans-serif;
+  --font-default-size: 16px;
+  --font-default-weight: 400;
+
+  // container
+  --container-padding: 15px;
+  --content-width: 1160px;
+  --content-width-large: 1720px;
+  --content-width-small: 1000px;
+  --container-width: calc(var(--content-width) + (var(--container-padding) * 2));
+  --container-width-large: calc(var(--content-width-large) + (var(--container-padding) * 2));
+  --container-width-small: calc(var(--content-width-small) + (var(--container-padding) * 2));
+
+  // padding
+  --padding-header: 30px;
+
+  // color
+  --page-bg-main: #fff;
+  --page-bg-burger: #fff;
+  --page-bg-hero: #141024;
+  --page-bg-footer: #141024;
+  --page-bg-card: #141024;
+  --page-bg-order: #d52027;
+  --page-bg-btn-form: #141024;
+  --page-bg-benefita: #f9f9f9;
+  --text-default-color: #141024;
+  --text-transparent-color: rgba(20, 16, 35, 0.7);
+  --text-light-color: #fff;
+  --accent-color: #d52027;
+  --link-default-color: #2578c8;
+  --copyright-color: rgba(255, 255, 255, 0.7);
+  --inactive-tab-color: rgba(20, 16, 36, 0.2);
+
+  // transition & opacity
+  --transition: 0.3s ease-in-out;
+  --opacity: 0.8;
+}
