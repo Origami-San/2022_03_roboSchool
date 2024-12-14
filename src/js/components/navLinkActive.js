@@ -4,6 +4,7 @@ export function initNavLinkActive(
     keepFirstActiveAboveThreshold: false,
     dataAttribute: "data-menu-item",
     offset: 200,
+    disableBelowWidth: 992,
   }
 ) {
   const navLinks = document.querySelectorAll(`[${options.dataAttribute}]`);
@@ -44,14 +45,39 @@ export function initNavLinkActive(
       }
     }
   }
+  // =========Без возможности отключения на мобильных устройствах===========
+  // // Установка активного класса на первый элемент при загрузке
+  // if (options.activateFirstOnLoad) {
+  //   navLinks.forEach((link) => link.classList.remove("active"));
+  //   firstLink.classList.add("active");
+  // }
 
-  // Установка активного класса на первый элемент при загрузке
-  if (options.activateFirstOnLoad) {
-    navLinks.forEach((link) => link.classList.remove("active"));
-    firstLink.classList.add("active");
+  // // Привязка событий
+  // document.addEventListener("scroll", updateActiveLink);
+  // window.addEventListener("load", updateActiveLink);
+  // =========Без возможности отключения на мобильных устройствах===========
+
+  // =========С возможностью отключения на мобильных устройствах===========
+  function handleResize() {
+    if (window.innerWidth <= options.disableBelowWidth) {
+      // Удаляем обработчики событий, если ширина меньше порога
+      document.removeEventListener("scroll", updateActiveLink);
+      window.removeEventListener("load", updateActiveLink);
+      navLinks.forEach((link) => link.classList.remove("active")); // Убираем все активные классы
+    } else {
+      // Добавляем обработчики событий, если ширина больше порога
+      document.addEventListener("scroll", updateActiveLink);
+      window.addEventListener("load", updateActiveLink);
+      if (options.activateFirstOnLoad) {
+        // Устанавливаем активный класс на первый элемент при загрузке
+        navLinks.forEach((link) => link.classList.remove("active"));
+        firstLink.classList.add("active");
+      }
+    }
   }
 
-  // Привязка событий
-  document.addEventListener("scroll", updateActiveLink);
-  window.addEventListener("load", updateActiveLink);
+  // Инициализация
+  handleResize();
+  window.addEventListener("resize", handleResize); // Отслеживаем изменения ширины окна
+  // =========С возможностью отключения на мобильных устройствах===========
 }

@@ -16,7 +16,11 @@ import "simplebar";
 import "./components/tabDropdown.js";
 
 // Scrolled
-import "./components/scrolled.js";
+import { initToggleScrolled } from "./components/scrolled.js";
+initToggleScrolled({
+  disableOnMobile: true, // Удалять класс header--fixed на мобильных устройствах
+  mobileBreakpoint: 992, // Отключение на ширине. Если disableOnMobile: false то не указываем данное значение
+});
 
 // navLinkActive
 import { initNavLinkActive } from "./components/navLinkActive.js";
@@ -26,6 +30,7 @@ initNavLinkActive({
   keepFirstActiveAboveThreshold: false, // Оставялть первый элемент активным, если меню находится выше значения смещения 200px
   dataAttribute: "data-menu-item", // атрибут ссылок меню навигации на которые будет применятся активный класс
   offset: 200, // Смещение в пикселях при котором класс будет активирован
+  disableBelowWidth: 992, // Отключение на экранах менее зявленного
 });
 
 // Typed
